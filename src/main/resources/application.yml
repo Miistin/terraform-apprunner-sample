@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: hello-world
+  aot:
+    enabled: true
+    optimizations:
+      service-loading: true
