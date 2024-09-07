@@ -29,6 +29,15 @@ dependencies {
 
     compileOnly("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
+
+    // Logger
+    implementation("com.sndyuk:logback-more-appenders:1.8.8")
+
+    // AWS SDK
+    implementation("software.amazon.awssdk:cloudwatch")
+    implementation("software.amazon.awssdk:cloudwatchevents")
+    implementation("software.amazon.awssdk:cloudwatchlogs")
+    implementation("com.amazonaws:aws-java-sdk-sts:1.12.771") // IAMロールからの一時認証用
 }
 
 

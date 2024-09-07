@@ -1,14 +1,19 @@
 <configuration>
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-        <encoder>
-            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
-        </encoder>
+    <appender name="CLOUDWATCH" class="ch.qos.logback.more.appenders.CloudWatchLogbackAppenderV2">
+        <awsConfig>
+            <region>ap-northeast-1</region>
+        </awsConfig>
+
+        <logGroupName>apperunner</logGroupName>
+        <logStreamName>api</logStreamName>
+
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </layout>
     </appender>
 
-    <root level="debug">
-        <appender-ref ref="STDOUT" />
+    <root level="INFO">
+        <appender-ref ref="CLOUDWATCH"/>
     </root>
 </configuration>

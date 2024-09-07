@@ -16,5 +16,9 @@ resource "aws_apprunner_service" "sample" {
     }
   }
 
+  instance_configuration {
+    instance_role_arn = aws_iam_role.apprunner_role.arn
+  }
+
   depends_on = [null_resource.deploy]
 }

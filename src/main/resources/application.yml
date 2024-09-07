@@ -5,3 +5,9 @@ micronaut:
     enabled: true
     optimizations:
       service-loading: true
+logging:
+  level:
+    root: INFO
+  appenders:
+    - type: CLOUDWATCH
+      name: cloudwatch
