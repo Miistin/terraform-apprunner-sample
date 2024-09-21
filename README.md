@@ -25,7 +25,17 @@ provider "aws" {
 }
 ```
 
+#### 変数の設定
+
+`terraform/apprunner/dev/terraform.tfvars` に以下の変数を設定してください。  
+(AppRunnerからFargateのタスクを呼び出す際に利用)
+
+```hcl
+vpc_id = "<vpcのID>"
+```
+
 ### Terraformの初期化
+
 ```bash
 cd terraform/apprunner/dev
 terraform init

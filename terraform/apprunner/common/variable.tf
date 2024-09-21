@@ -3,3 +3,8 @@ variable "imagename" {
     type = string
     default = "micronaut-apprunner"
 }
+
+variable "vpc_id" {
+    description = "The VPC ID"
+    type = string
+}

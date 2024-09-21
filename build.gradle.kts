@@ -30,10 +30,15 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
 
+    // コマンド
+    implementation("info.picocli:picocli:4.7.4") // 最新バージョンを確認してください
+    implementation("io.micronaut.picocli:micronaut-picocli:4.0.0")
+
     // Logger
     implementation("com.sndyuk:logback-more-appenders:1.8.8")
 
     // AWS SDK
+    implementation("software.amazon.awssdk:ecs")
     implementation("software.amazon.awssdk:cloudwatch")
     implementation("software.amazon.awssdk:cloudwatchevents")
     implementation("software.amazon.awssdk:cloudwatchlogs")

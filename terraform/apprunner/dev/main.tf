@@ -2,6 +2,11 @@ locals {
   profile = "admin"
 }
 
+variable "vpc_id" {
+  type = string
+  description = "VPC ID"
+}
+
 provider "aws" {
   region = "ap-northeast-1"  # 変数を参照する形でAWSプロバイダを設定
   profile = local.profile
@@ -9,6 +14,7 @@ provider "aws" {
 
 module "common" {
   source = "../common"
+  vpc_id = var.vpc_id
 }
 
 #terraform {
